@@ -1,0 +1,16 @@
+go 1.22.1
+
+use (
+	./ch1
+	./ch10
+	./ch2
+	./ch3
+	./ch4
+	./ch5
+	./ch6
+	./ch7
+	./ch8
+	./ch9
+	./go-middleware
+	./project-structure
+)

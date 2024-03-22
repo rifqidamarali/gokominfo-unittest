@@ -10,8 +10,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/model"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/service/mocks"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/model"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/service/mocks"
 )
 
 func TestUserSignUp(t *testing.T) {
@@ -64,5 +64,12 @@ func TestUserSignUp(t *testing.T) {
 		usrHdl.UserSignUp(g)
 
 		assert.Equal(t, http.StatusInternalServerError, rec.Result().StatusCode)
+	})
+}
+
+func TestGetUsers(t *testing.T){
+	t.Run("error get user", func(t *testing.T) {
+	
+	
 	})
 }

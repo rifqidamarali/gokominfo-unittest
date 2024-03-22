@@ -1,9 +1,9 @@
 package router
 
 import (
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/handler"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/handler"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/middleware"
 )
 
 type UserRouter interface {

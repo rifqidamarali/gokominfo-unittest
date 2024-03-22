@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/model"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/repository"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/pkg/helper"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/model"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/repository"
+	"github.com/rifqidamarali/gokominfo-unittest/pkg/helper"
 )
 
 type UserService interface {

@@ -5,7 +5,7 @@ package mocks
 import (
 	context "context"
 
-	model "github.com/Calmantara/go-kominfo-2024/go-middleware/internal/model"
+	model "github.com/rifqidamarali/gokominfo-unittest/internal/model"
 	mock "github.com/stretchr/testify/mock"
 )
 

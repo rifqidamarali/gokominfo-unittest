@@ -6,17 +6,17 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/handler"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/infrastructure"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/model"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/repository"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/router"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/internal/service"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/pkg"
-	"github.com/Calmantara/go-kominfo-2024/go-middleware/pkg/helper"
 	"github.com/gin-gonic/gin"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/handler"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/infrastructure"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/model"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/repository"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/router"
+	"github.com/rifqidamarali/gokominfo-unittest/internal/service"
+	"github.com/rifqidamarali/gokominfo-unittest/pkg"
+	"github.com/rifqidamarali/gokominfo-unittest/pkg/helper"
 
-	_ "github.com/Calmantara/go-kominfo-2024/go-middleware/cmd/docs"
+	_ "github.com/rifqidamarali/gokominfo-unittest/cmd/docs"
 
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -39,6 +39,7 @@ func main() {
 	// [x] middleware untuk recover ketika panic
 	// [x] mengecheck basic auth
 	assignment3()
+	server()
 }
 
 // Product:
