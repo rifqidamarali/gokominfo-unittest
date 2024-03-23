@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
 	"net/http"
 	"time"
 
@@ -15,11 +14,7 @@ import (
 	"github.com/rifqidamarali/gokominfo-unittest/internal/service"
 	"github.com/rifqidamarali/gokominfo-unittest/pkg"
 	"github.com/rifqidamarali/gokominfo-unittest/pkg/helper"
-
-	_ "github.com/rifqidamarali/gokominfo-unittest/cmd/docs"
-
-	swaggerFiles "github.com/swaggo/files"
-	ginSwagger "github.com/swaggo/gin-swagger"
+	// _ "github.com/Calmantara/go-kominfo-2024/go-middleware/cmd/docs"
 )
 
 // @title			GO DTS USER API DUCUMENTATION
@@ -38,7 +33,7 @@ func main() {
 	// requirement technical:
 	// [x] middleware untuk recover ketika panic
 	// [x] mengecheck basic auth
-	assignment3()
+	// assignment3()
 	server()
 }
 
@@ -94,32 +89,7 @@ func server() {
 	// mount
 	userRouter.Mount()
 	// swagger
-	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+	// g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	g.Run(":3000")
-}
-
-func assignment3() {
-	g := gin.Default()
-
-	data := map[string]any{}
-
-	go func() {
-		for {
-			// read json file
-			// update json file
-			data["water"] = rand.Int31n(100)
-			data["wind"] = rand.Int31n(100)
-			data["fire"] = rand.Int31n(100)
-			data["earth"] = rand.Int31n(100)
-			time.Sleep(15 * time.Second)
-		}
-	}()
-
-	g.GET("/data", func(ctx *gin.Context) {
-		ctx.JSON(http.StatusOK, map[string]any{
-			"status": data,
-		})
-	})
-	g.Run(":3030")
 }

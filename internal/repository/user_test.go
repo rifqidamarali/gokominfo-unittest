@@ -65,3 +65,21 @@ func TestGetUsers(t *testing.T) {
 		assert.Equal(t, 1, len(res))
 	})
 }
+
+func TestDeleteUsersById(t *testing.T) {
+	t.Run("invalid id", func(t *testing.T) {
+		db, mock := newMockGorm()
+		// mock infra
+		postgresMock := mocks.NewGormPostgres(t)
+		postgresMock.On("GetConnection").Return(db)
+
+		mock.ExpectQuery(regexp.QuoteMeta(`
+		DELETE FROM users WHERE id = 0
+		`)).WillReturnError(errors.New("some error"))
+
+		userRepo := userQueryImpl{db: postgresMock}
+		err := userRepo.DeleteUsersByID(context.Background(), 0)
+		assert.NotNil(t, err)
+	})
+
+}
